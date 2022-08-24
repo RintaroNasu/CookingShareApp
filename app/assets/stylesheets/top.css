@@ -1,0 +1,53 @@
+/* header{
+    height: 80px;
+    background: rgba(49, 49, 48, 0.5);
+   position: absolute;
+    width: 100%;
+    z-index: 100;
+  } */
+.cook1{
+  display: inline-block;
+  border: solid;
+  font-family: serif;
+  background-color: rgb(255, 255, 255);
+  margin: 20px;
+}   
+/* .top{
+  width: 100%;
+  height: 600px;
+  background-image: url("cooking2.jpg");
+  background-size: cover;
+  font-family: serif;
+} */
+.box{
+  font-family: serif;
+  min-height: 40vh;
+}
+.d{
+  background-image: url("background3.jpg");
+  min-height: 100vh;
+}
+
+.dish{
+  height: 70vh;
+}
+.header{
+    height: 80px;
+    background: rgba(25, 25, 24, 0.568);
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+  }
+.center{
+  text-align: center;
+  margin: 80px;
+}
+.main{
+  color: rgba(247, 245, 245, 0.589);
+}
+.cook4{
+  color: rgba(252, 247, 247, 0.856);
+}
+
+
+

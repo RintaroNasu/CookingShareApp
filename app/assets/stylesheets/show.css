@@ -1,0 +1,16 @@
+.cook{
+    font-family: serif;
+}
+.a{
+    font-family: serif;
+}
+.c{
+    border: solid;
+    width: 300px;
+}
+.show{
+    background-image: url("background3.jpg");
+    min-height: 100vh;
+}
+
+

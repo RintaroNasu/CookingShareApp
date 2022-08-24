@@ -1,0 +1,22 @@
+.b{
+    font-family: serif;
+    background-image: url("background3.jpg");
+    min-height: 100vh;
+}
+.user{
+    border: solid;
+    width: 200px;
+    text-align: center;
+}
+.user2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+.cook2{
+    width: 20%; 
+}
+.cook3{
+    height: 200px;
+}

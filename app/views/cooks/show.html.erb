@@ -1,0 +1,29 @@
+<div class="show">   
+    <h3>詳細</h3>
+    <div class="cook">
+        <p><%= @cook.cooking_name %></p>
+        <p><%= @cook.how_to_make %></p>
+        <p><%= image_tag @cook.image_url, size: "250x200" if @cook.image? %></p>
+        <%= link_to "一覧に戻る", statics_top_path %>
+        <% if user_signed_in? && current_user.id ==@cook .user_id %>
+            <%= link_to "編集する", edit_cook_path(@cook.id) %>
+        <% end %>
+        <% if user_signed_in? %>
+            <% if current_user.already_liked?(@cook) %>
+                <%= link_to cook_like_path(@cook), method: :delete do %>
+                    <i class="fas fa-heart"></i><%= @cook.likes.count %>
+                <% end %>
+            <% else %>
+                <%= link_to cook_likes_path(@cook), method: :post do %>
+                <i class="far fa-heart"></i><%= @cook.likes.count %>
+            <% end %>
+        <% end %>
+        <% else %>
+            <i class="far fa-heart"></i><%= @cook.likes.count %>
+        <% end %>
+        <h2>いいねしたユーザー</h2>
+        <% @cook.liked_users.each do |user| %>
+            <li><%= user.email %></li>
+        <% end %>
+    </div>
+</div>    
