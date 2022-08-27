@@ -1,42 +1,83 @@
-<div class="b">
-  <%= form_for @cook do |f| %>
-    <div class="field">
-      <%= f.label :料理名 %>  
-      <%= f.text_field :cooking_name, class:"cook2" %>
-      <br>
-      <%= f.label :作り方 %>  
-      <%= f.text_area :how_to_make, class:"cook3" %>
-      <h5>手軽さ</h5>
-      <div class="post_form">
-        <%= f.radio_button :easy, 5 ,id: 'star1'%>
-        <label for="star1"><span class="text">簡単</span>★</label>
-        <%= f.radio_button :easy, 4 ,id: 'star2'%>
-        <label for="star2"><span class="text">やや簡単</span>★</label>
-        <%= f.radio_button :easy, 3 ,id: 'star3'%>
-        <label for="star3"><span class="text">普通</span>★</label>
-        <%= f.radio_button :easy, 2 ,id: 'star4'%>
-        <label for="star4"><span class="text">やや難しい</span>★</label>
-        <%= f.radio_button :easy, 1 ,id: 'star5'%>
-        <label for="star5"><span class="text">難しい</span>★</label>
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Food</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head> 
+  <body>
+    <div class="about5">
+      <div class="about20">
+        <header class="header1">
+          <div class="main10"><h1>Cooking Share</h1></div>
+          <div class=“header-list”>
+            <ul>
+              <li><%= link_to "about",  statics_about_path, class:"cook4"  %></li>
+              <li><%= link_to "Top",  statics_top_path, class:"cook4" %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "マイページへ", user_path(current_user.id), class:"cook4" %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"cook4" %></li>
+              <% end %>
+              <% unless user_signed_in? %>
+                <li> <%= link_to "新規登録", new_user_registration_path, class:"cook4" %></li>
+                <li><%= link_to "ログイン",   new_user_session_path, class:"cook4" %></li>
+              <% end %>
+              <li> <%= link_to "投稿する",   new_cook_path, class:"cook4" %></li>
+            </ul>
+          </div>
+        </header>
+        <h1 class="about30">投稿する</h1>
+      </div>  
+      <div class="b">
+        <%= form_for @cook do |f| %>
+          <div class="field">
+            <%= f.label :料理名 %>  
+            <%= f.text_field :cooking_name, class:"cook2" %>
+            <br>
+            <%= f.label :作り方 %>  
+            <%= f.text_area :how_to_make, class:"cook3" %>
+            <h5>手軽さ</h5>
+            <div class="post_form">
+              <%= f.radio_button :easy, 5 ,id: 'star1'%>
+              <label for="star1"><span class="text">簡単</span>★</label>
+              <%= f.radio_button :easy, 4 ,id: 'star2'%>
+              <label for="star2"><span class="text">やや簡単</span>★</label>
+              <%= f.radio_button :easy, 3 ,id: 'star3'%>
+              <label for="star3"><span class="text">普通</span>★</label>
+              <%= f.radio_button :easy, 2 ,id: 'star4'%>
+              <label for="star4"><span class="text">やや難しい</span>★</label>
+              <%= f.radio_button :easy, 1 ,id: 'star5'%>
+              <label for="star5"><span class="text">難しい</span>★</label>
+            </div>
+            <h5>美味しさ</h5>
+            <div class="post_form">
+            <%= f.radio_button :deliciousness,  5 ,id: 'star6'%>
+            <label for="star6"><span class="text">5</span>★</label>
+            <%= f.radio_button :deliciousness,  4 ,id: 'star7'%>
+            <label for="star7"><span class="text">4</span>★</label>
+            <%= f.radio_button :deliciousness, 3 ,id: 'star8'%>
+            <label for="star8"><span class="text">3</span>★</label>
+            <%= f.radio_button :deliciousness , 2 ,id: 'star9'%>
+            <label for="star9"><span class="text">2</span>★</label>
+            <%= f.radio_button :deliciousness , 1 ,id: 'star10'%>
+            <label for="star10"><span class="text">1</span>★</label>
+          </div>
+          <div class="field">
+            <%= f.label :料理の写真 %>
+            <%= f.file_field :image %>
+          </div>
+          <%= f.submit "投稿する" %>  
+        <% end %> 
       </div>
-      <h5>美味しさ</h5>
-      <div class="post_form">
-      <%= f.radio_button :deliciousness,  5 ,id: 'star6'%>
-      <label for="star6"><span class="text">5</span>★</label>
-      <%= f.radio_button :deliciousness,  4 ,id: 'star7'%>
-      <label for="star7"><span class="text">4</span>★</label>
-      <%= f.radio_button :deliciousness, 3 ,id: 'star8'%>
-      <label for="star8"><span class="text">3</span>★</label>
-      <%= f.radio_button :deliciousness , 2 ,id: 'star9'%>
-      <label for="star9"><span class="text">2</span>★</label>
-      <%= f.radio_button :deliciousness , 1 ,id: 'star10'%>
-      <label for="star10"><span class="text">1</span>★</label>
     </div>
-    <div class="field">
-      <%= f.label :料理の写真 %>
-      <%= f.file_field :image %>
-    </div>
-    <%= f.submit "投稿する" %>  
-  <% end %> 
-</div>
+    <footer>
+    <p>Copyright © GeekSalon All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
 

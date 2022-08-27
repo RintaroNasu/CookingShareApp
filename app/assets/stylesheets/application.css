@@ -13,9 +13,12 @@
  *= require_tree .
  *= require_self
  */
- header{
-    height: 80px;
-    background: rgba(21, 21, 21, 0.675);
+*{
+  font-family: serif;
+}
+header{
+    height: 100px;
+    background: rgba(183, 179, 179, 0.592);
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -24,7 +27,7 @@
 
   }
   
- header ul {
+header ul {
     display: flex; 
     text-align: right;
 
@@ -40,11 +43,20 @@
   .header-list{
     display: flex;
     align-items: center;
-    font-family: serif; 
   }
   .main{
-    color: rgba(252, 251, 251, 0.699);
+    color: rgb(247, 244, 244);
 }
 .cook4{
-  color: rgba(252, 247, 247, 0.856);
+  color: rgb(252, 247, 247);
 }
+footer{
+  color: white;
+  height: 30px;
+  background-color: #000;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+

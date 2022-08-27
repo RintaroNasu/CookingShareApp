@@ -1,8 +1,12 @@
 .edit{
-    background-image: url("background3.jpg");
     min-height: 100vh;
 }
 .profile{
-    background-image: url("background3.jpg");
     min-height: 100vh;
+}
+.about25{
+    background-image: url("background16.jpg");
+    min-height: 80vh;
+    width: 100%;
+    background-size: cover;
 }

@@ -2,6 +2,7 @@ class CooksController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   def  new
     @cook=Cook.new
+    render layout: false
   end
   def create 
     cook=Cook.new(cook_params)
@@ -17,6 +18,8 @@ class CooksController < ApplicationController
   end
   def edit
     @cook = Cook.find(params[:id])
+    render layout: false
+
   end
   def update
     cook = Cook.find(params[:id])

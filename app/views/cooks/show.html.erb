@@ -1,6 +1,6 @@
 <div class="show">   
     <h3>詳細</h3>
-    <div class="cook">
+    
         <p><%= @cook.cooking_name %></p>
         <p><%= @cook.how_to_make %></p>
         <p><%= image_tag @cook.image_url, size: "250x200" if @cook.image? %></p>
@@ -25,5 +25,5 @@
         <% @cook.liked_users.each do |user| %>
             <li><%= user.email %></li>
         <% end %>
-    </div>
+
 </div>    

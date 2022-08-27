@@ -8,9 +8,9 @@
 .cook1{
   display: inline-block;
   border: solid;
-  font-family: serif;
-  background-color: rgb(255, 255, 255);
-  margin: 20px;
+  background-color: rgb(240, 234, 234);
+  margin: 10px;
+  width: 30%;
 }   
 /* .top{
   width: 100%;
@@ -20,34 +20,59 @@
   font-family: serif;
 } */
 .box{
-  font-family: serif;
   min-height: 40vh;
 }
-.d{
-  background-image: url("background3.jpg");
-  min-height: 100vh;
-}
-
 .dish{
   height: 70vh;
 }
 .header{
-    height: 80px;
-    background: rgba(25, 25, 24, 0.568);
-    position: absolute;
+    height: 100px;
+    background: rgba(62, 62, 61, 0.479);
+    position: fixed;
     width: 100%;
     z-index: 100;
   }
 .center{
   text-align: center;
   margin: 80px;
+  border-bottom: double 6px #a5a8a9;
 }
 .main{
-  color: rgba(247, 245, 245, 0.589);
+  color: rgb(247, 245, 245);
 }
 .cook4{
   color: rgba(252, 247, 247, 0.856);
 }
+footer{
+  color: white;
+  height: 30px;
+  background-color: #000;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+}
+.top{
+  color: rgba(255, 249, 249, 0.887);
+  position: absolute;
+  top: 43%;left: 25%;
+  width: 50%;
+}
+.image{
+  width: 100%;
+}
+.topphotobox{
+  height: 100vh;
+}
+.topphoto{
+  object-fit: cover;
+
+}
+
 
 
 

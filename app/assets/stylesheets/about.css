@@ -1,0 +1,49 @@
+.about{
+    background-image: url("cooking20.jpg");
+    min-height: 70vh;
+    background-size: cover;
+    width: 100%;
+    
+}
+.header1{
+    height: 100px;
+    background: rgba(62, 62, 61, 0.479);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.about4{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 20vh;
+}
+.main10{
+    color: rgb(237, 229, 229);
+}
+.sentence{
+    margin: 80px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 20px;
+}
+.hoge{
+    margin-top: 15vh;
+    width: 75%;
+}
+.sentence2{
+    margin: 80px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+.photo{
+    text-align: right;
+}
+.photo2{
+    margin-top: 10vh;
+    width: 75%;
+}
+
+
+
+
+

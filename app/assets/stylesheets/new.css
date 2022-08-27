@@ -1,7 +1,5 @@
 .b{
-    font-family: serif;
-    background-image: url("background3.jpg");
-    min-height: 100vh;
+    min-height: 70vh;
 }
 .user{
     border: solid;
@@ -13,10 +11,24 @@
     text-align: center;
     justify-content: center;
     margin-top: 10vh;
+    min-height: 84vh;
 }
 .cook2{
     width: 20%; 
 }
 .cook3{
     height: 200px;
+}
+.about20{
+    background-image: url("background15.jpg");
+    min-height: 70vh;
+    background-size: cover;
+}
+.about30{
+    color: rgba(255, 255, 255, 0.832);
+    text-align: center;
+    padding-top: 20vh;
+}
+.signup{
+    min-height: 84vh;
 }
