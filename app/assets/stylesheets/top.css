@@ -70,7 +70,9 @@ footer{
 }
 .topphoto{
   object-fit: cover;
-
+}
+.cook100{
+  color: rgb(9, 9, 9);
 }
 
 

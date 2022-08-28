@@ -13,7 +13,7 @@
     z-index: 100;
 }
 .about4{
-    color: rgb(255, 255, 255);
+    color: rgb(237, 229, 229);
     text-align: center;
     padding-top: 20vh;
 }
@@ -21,10 +21,12 @@
     color: rgb(237, 229, 229);
 }
 .sentence{
-    margin: 80px;
+    margin: 100px;
     margin-left: 300px;
     margin-right: 300px;
     padding: 20px;
+    line-height: 40px;
+    font-size: 1.3em;
 }
 .hoge{
     margin-top: 15vh;
@@ -34,6 +36,8 @@
     margin: 80px;
     margin-left: 300px;
     margin-right: 300px;
+    line-height: 40px;
+    font-size: 1.3em;
 }
 .photo{
     text-align: right;

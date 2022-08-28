@@ -9,36 +9,8 @@
     <h2>ユーザーの投稿一覧</h2>
     <div class="block">
       <% @user.cooks.each do |t| %>
-        <div class="cook">
-          <div class="c">   
-            <%= image_tag t.image_url, size: "250x200" if t.image? %>
-            <div><%= t.cooking_name %></div>
-            <div>
-              <h2>手軽さ:
-                <span class="star-rating">
-                  <span class="star-rating-front" style="width: <%= getPercent(t.easy) %>%;">★★★★★</span>
-                  <span class="star-rating-back">★★★★★</span>
-                </span> 
-              </h2>
-            </div>
-            <div>
-              <h2>美味しさ：
-                <span class="star-rating">
-                  <span class="star-rating-front" style="width: <%= getPercent(t.deliciousness) %>%;">★★★★★</span>
-                  <span class="star-rating-back">★★★★★</span>
-                </span>
-              </h2>
-            </div>
-            <%= link_to "詳細へ", cook_path(t.id) %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <h2>ユーザーがいいねした投稿一覧</h2>
-    <div class="block">
-      <% @user.likes_cooks.each do |t| %>
         <div class="c">   
-          <%= image_tag t.image_url, size: "250x200" if t.image? %>
+          <%= image_tag t.image_url, class:'image' if t.image? %>
           <div><%= t.cooking_name %></div>
           <div>
             <h2>手軽さ:
@@ -56,7 +28,33 @@
               </span>
             </h2>
           </div>
-          <%= link_to "詳細へ", cook_path(t.id) %>
+          <%= link_to "詳細へ", cook_path(t.id),class:"cook100" %>
+        </div>
+      <% end %>
+    </div>
+    <h2>ユーザーがいいねした投稿一覧</h2>
+    <div class="block">
+      <% @user.likes_cooks.each do |t| %>
+        <div class="c">   
+          <%= image_tag t.image_url, class:'image' if t.image? %>
+          <div><%= t.cooking_name %></div>
+          <div>
+            <h2>手軽さ:
+              <span class="star-rating">
+                <span class="star-rating-front" style="width: <%= getPercent(t.easy) %>%;">★★★★★</span>
+                <span class="star-rating-back">★★★★★</span>
+              </span> 
+            </h2>
+          </div>
+          <div>
+            <h2>美味しさ：
+              <span class="star-rating">
+                <span class="star-rating-front" style="width: <%= getPercent(t.deliciousness) %>%;">★★★★★</span>
+                <span class="star-rating-back">★★★★★</span>
+              </span>
+            </h2>
+          </div>
+          <%= link_to "詳細へ", cook_path(t.id),class:"cook100" %>
         </div>
       <% end %>
     </div>

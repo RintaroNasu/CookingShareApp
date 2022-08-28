@@ -1,29 +1,72 @@
-<div class="show">   
-    <h3>詳細</h3>
-    
-        <p><%= @cook.cooking_name %></p>
-        <p><%= @cook.how_to_make %></p>
-        <p><%= image_tag @cook.image_url, size: "250x200" if @cook.image? %></p>
-        <%= link_to "一覧に戻る", statics_top_path %>
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Food</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head> 
+    <body>
+        <div class="show" style="background-image: url(<%= @cook.image_url %>);" >
+            <header class="header1">
+                <div class="main10"><h1>Cooking Share</h1></div>
+                <div class=“header-list”>
+                    <ul>
+                        <li><%= link_to "about",  statics_about_path, class:"cook4"  %></li>
+                        <li><%= link_to "Top",  statics_top_path, class:"cook4" %></li>
+                        <% if user_signed_in? %>
+                            <li><%= link_to "マイページへ", user_path(current_user.id), class:"cook4" %></li>
+                            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"cook4" %></li>
+                        <% end %>
+                        <% unless user_signed_in? %>
+                            <li> <%= link_to "新規登録", new_user_registration_path, class:"cook4" %></li>
+                            <li><%= link_to "ログイン",   new_user_session_path, class:"cook4" %></li>
+                        <% end %>
+                        <li> <%= link_to "投稿する",   new_cook_path, class:"cook4" %></li>
+                    </ul>
+                </div>
+            </header>  
+        </div> 
+        <div class="showname">
+            <h1>詳細</h1>
+        </div>
+        <p class="beef"><%= @cook.cooking_name %></p>
+        <div class="howtocookflex">
+        <p class="howtocook"><%= @cook.how_to_make %></p>
+        </div>
+        <div class="iine02">
+        <div class="iine">
+        <%= link_to "一覧に戻る", statics_top_path, class:"cook200" %>
         <% if user_signed_in? && current_user.id ==@cook .user_id %>
-            <%= link_to "編集する", edit_cook_path(@cook.id) %>
+            <%= link_to "編集する", edit_cook_path(@cook.id), class:"cook200" %>
         <% end %>
         <% if user_signed_in? %>
             <% if current_user.already_liked?(@cook) %>
                 <%= link_to cook_like_path(@cook), method: :delete do %>
-                    <i class="fas fa-heart"></i><%= @cook.likes.count %>
+                    <i class="fas fa-heart"><%= @cook.likes.count %></i>
                 <% end %>
             <% else %>
                 <%= link_to cook_likes_path(@cook), method: :post do %>
-                <i class="far fa-heart"></i><%= @cook.likes.count %>
+                    <i class="far fa-heart"><%= @cook.likes.count %></i>
+                <% end %>
             <% end %>
-        <% end %>
         <% else %>
-            <i class="far fa-heart"></i><%= @cook.likes.count %>
+            <i class="far fa-heart"><%= @cook.likes.count %></i>
         <% end %>
+        </div>
+        </div>
         <h2>いいねしたユーザー</h2>
         <% @cook.liked_users.each do |user| %>
             <li><%= user.email %></li>
         <% end %>
+        <footer>
+    <p>Copyright © GeekSalon All Rights Reserved.</p>
+    </footer>
+    </body>
+</html>
+    
 
-</div>    

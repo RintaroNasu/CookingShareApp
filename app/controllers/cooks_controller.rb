@@ -15,6 +15,7 @@ class CooksController < ApplicationController
   end
   def show
     @cook = Cook.find(params[:id]) 
+    render layout:false
   end
   def edit
     @cook = Cook.find(params[:id])

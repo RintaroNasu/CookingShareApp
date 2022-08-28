@@ -1,8 +1,17 @@
 .b{
     min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new01{
+    background-color: rgba(250, 235, 215, 0.527);
+    border-radius:23px;
+
 }
 .user{
     border: solid;
+    height: 340px;
     width: 200px;
     text-align: center;
 }
@@ -15,9 +24,12 @@
 }
 .cook2{
     width: 20%; 
+    border-radius: 10px;
 }
 .cook3{
     height: 200px;
+    border-radius: 10px;
+    width: 300px;
 }
 .about20{
     background-image: url("background15.jpg");
@@ -32,3 +44,19 @@
 .signup{
     min-height: 84vh;
 }
+.how{
+    position: relative;
+    bottom: 300px;
+}
+.label{
+    position: relative;
+    bottom: 100px;
+}
+.user3{
+    border: solid;
+    height: 230px;
+    width: 300px;
+    text-align: center;
+}
+
+

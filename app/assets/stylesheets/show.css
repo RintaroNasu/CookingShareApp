@@ -1,4 +1,5 @@
 .c{
+    background-color: rgb(240, 234, 234);
     border: solid;
     width: 300px;
 }
@@ -6,8 +7,57 @@
     display: flex;
 }
 .show{
-min-height: 84vh;
+    min-height: 500px;
+    background-position: center center;
+    background-size: cover;
 }
-
+.beef{
+    position: relative;
+    font-size: 3em;
+    font-weight: 1000;
+    color: rgb(252, 247, 247);
+    width: 30vh;
+    position: relative;
+    bottom: 400px;
+    left: 15px;
+    text-decoration : underline;
+}
+.howtocookflex{
+    min-height: 300px;
+    min-width: 500px;
+    display: flex;
+    justify-content: center;
+}
+.howtocook{
+    min-width: 700px;
+    background-color: rgba(250, 235, 215, 0.527);
+    border-radius:23px;
+    position: relative;
+    bottom: 100px;
+}
+.showname{
+    color: rgb(252, 247, 247);
+    margin-top: 10px;
+    width: 30vh;
+    position: relative;
+    bottom: 400px;
+    left: 15px;    
+}
+.iine{
+    width: 259px;
+    position: relative;
+    bottom: 500px;
+}
+.cook200{
+    color: rgb(252, 247, 247);
+    font-size: 1.5em;
+}
+.fa-heart{
+    color: rgb(244, 165, 246);
+}
+.iine02{
+    display: flex;
+    justify-content: right;
+}
 
 

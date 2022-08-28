@@ -89,17 +89,17 @@
                         <% if user_signed_in? %>
                             <% if current_user.already_liked?(t) %>
                                 <%= link_to cook_like_path(id: t.id, cook_id: t.id), method: :delete do %>
-                                <i class="far fa-heart"></i><%= t.likes.count %>
+                                <i class="far fa-heart"><%= t.likes.count %></i>
                                 <% end %>
                             <% else %>
                                 <%= link_to cook_likes_path(id: t.id, cook_id: t.id), method: :post do %>
-                                <i class="far fa-heart"></i><%= t.likes.count %>
+                                <i class="far fa-heart"><%= t.likes.count %></i>
                                 <% end %>
                             <% end %>
                         <% else %>
-                            <i class="far fa-heart"></i><%= t.likes.count %>
+                            <i class="far fa-heart"><%= t.likes.count %></i>
                         <% end %>
-                        <%= link_to "詳細へ", cook_path(t.id) %>
+                        <%= link_to "詳細へ", cook_path(t.id), class:"cook100" %>
                         <% if user_signed_in? && current_user.id == t.user_id %>
                         <% end %> 
                     </div>
@@ -126,17 +126,17 @@
                         <% if user_signed_in? %>
                             <% if current_user.already_liked?(t) %>
                                 <%= link_to cook_like_path(id: t.id, cook_id: t.id), method: :delete do %>
-                                <i class="far fa-heart"></i><%= t.likes.count %>
+                                <i class="far fa-heart"><%= t.likes.count %></i>
                                 <% end %>
                             <% else %>
                                 <%= link_to cook_likes_path(id: t.id, cook_id: t.id), method: :post do %>
-                                <i class="far fa-heart"></i><%= t.likes.count %>
+                                <i class="far fa-heart"><%= t.likes.count %></i>
                                 <% end %>
                             <% end %>
                         <% else %>
-                            <i class="far fa-heart"></i><%= t.likes.count %>
+                            <i class="far fa-heart"><%= t.likes.count %></i>
                         <% end %>
-                        <%= link_to "詳細へ", cook_path(t.id) %>
+                        <%= link_to "詳細へ", cook_path(t.id), class:"cook100" %>
                         <% if user_signed_in? && current_user.id == t.user_id %>
                         <% end %> 
                     </div>
