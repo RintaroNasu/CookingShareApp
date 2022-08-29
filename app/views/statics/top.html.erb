@@ -86,22 +86,28 @@
                                 </span>
                             </h2>
                         </div>
-                        <% if user_signed_in? %>
-                            <% if current_user.already_liked?(t) %>
-                                <%= link_to cook_like_path(id: t.id, cook_id: t.id), method: :delete do %>
-                                <i class="far fa-heart"><%= t.likes.count %></i>
+                        <div class="parent">
+                            <div class="hart">
+                                <% if user_signed_in? %>
+                                    <% if current_user.already_liked?(t) %>
+                                        <%= link_to cook_like_path(id: t.id, cook_id: t.id), method: :delete do %>
+                                        <i class="far fa-heart"><%= t.likes.count %></i>
+                                        <% end %>
+                                    <% else %>
+                                        <%= link_to cook_likes_path(id: t.id, cook_id: t.id), method: :post do %>
+                                        <i class="far fa-heart"><%= t.likes.count %></i>
+                                        <% end %>
+                                    <% end %>
+                                <% else %>
+                                    <i class="far fa-heart"><%= t.likes.count %></i>
                                 <% end %>
-                            <% else %>
-                                <%= link_to cook_likes_path(id: t.id, cook_id: t.id), method: :post do %>
-                                <i class="far fa-heart"><%= t.likes.count %></i>
-                                <% end %>
-                            <% end %>
-                        <% else %>
-                            <i class="far fa-heart"><%= t.likes.count %></i>
-                        <% end %>
-                        <%= link_to "詳細へ", cook_path(t.id), class:"cook100" %>
-                        <% if user_signed_in? && current_user.id == t.user_id %>
-                        <% end %> 
+                                <%= link_to "詳細へ", cook_path(t.id), class:"cook100" %>
+                            </div>
+                            <div class="toukousya">
+                                <a>投稿者</a><a class="name"><%= t.user.name %></a>
+                            </div>
+                        </div>
+                        
                     </div>
                 <% end %>
             </div>
@@ -123,6 +129,8 @@
                                 </span> 
                             </h2>
                         </div>
+                        <div class="parent">
+                        <div class="hart">
                         <% if user_signed_in? %>
                             <% if current_user.already_liked?(t) %>
                                 <%= link_to cook_like_path(id: t.id, cook_id: t.id), method: :delete do %>
@@ -137,8 +145,12 @@
                             <i class="far fa-heart"><%= t.likes.count %></i>
                         <% end %>
                         <%= link_to "詳細へ", cook_path(t.id), class:"cook100" %>
-                        <% if user_signed_in? && current_user.id == t.user_id %>
-                        <% end %> 
+                        </div>
+                        <div class="toukousya">
+                        <a>投稿者</a><a class="name"><%= t.user.name %></a>
+                        </div>
+                        </div>
+                        
                     </div>
                 <% end %>
             </div>

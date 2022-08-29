@@ -74,7 +74,16 @@ footer{
 .cook100{
   color: rgb(9, 9, 9);
 }
-
+.name{
+  color: rgb(9, 9, 9);  
+}
+.parent{
+  display: flex;
+  justify-content: space-between;
+}
+.toukousya{
+  padding-right: 10px;
+}
 
 
 
