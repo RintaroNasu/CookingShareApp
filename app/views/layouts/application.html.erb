@@ -23,8 +23,8 @@
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"cook4" %></li>
           <% end %>
           <% unless user_signed_in? %>
-            <li> <%= link_to "新規登録", new_user_registration_path, class:"cook4" %></li>
-            <li><%= link_to "ログイン",   new_user_session_path, class:"cook4" %></li>
+            <li> <%= link_to "新規登録", new_user_registration_path %></li>
+            <li><%= link_to "ログイン",   new_user_session_path %></li>
           <% end %>
           <li> <%= link_to "投稿する",   new_cook_path, class:"cook4" %></li>
         </ul>

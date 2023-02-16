@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   get 'statics/top'  => 'statics#top'
   get 'statics/about' => 'statics#about'
-  root'statics#top'
+  root 'statics#top'
   resources :cooks do
     resources :likes, only: [:create, :destroy]
   end
